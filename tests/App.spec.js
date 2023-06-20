@@ -23,7 +23,7 @@ const TODO_ITEMS = [
     await page.fill('[placeholder="Пароль"]', password_1);
     // Click [data-testid="login-submit-btn"]
     await Promise.all([
-      page.waitForNavigation(/*{ url: 'https://netology.ru/profile' }*/),
+      page.waitForNavigation(/*{ url:  }*/),
       page.click('[data-testid="login-submit-btn"]')
     ]);
     // Click text=АЩ
