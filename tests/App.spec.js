@@ -29,4 +29,3 @@ const TODO_ITEMS = [
     // Click text=АЩ
     await page.click('text=АЩ');
 });
-
