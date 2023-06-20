@@ -1,22 +1,32 @@
 const { test, expect } = require("@playwright/test");
-
-test("test", async ({ page }) => {
-  // Go to https://netology.ru/free/management#/
-  await page.goto("https://netology.ru/free/management#/");
-
-  // Click a
-  await page.click("a");
-  await expect(page).toHaveURL("https://netology.ru/");
-
-  // Click text=Учиться бесплатно
-  await page.click("text=Учиться бесплатно");
-  await expect(page).toHaveURL("https://netology.ru/free");
-
-  page.click("text=Бизнес и управление");
-
-  // Click text=Как перенести своё дело в онлайн
-  await page.click("text=Как перенести своё дело в онлайн");
-  await expect(page).toHaveURL(
-    "https://netology.ru/programs/kak-perenesti-svoyo-delo-v-onlajn-bp"
-  );
+const TODO_ITEMS = [
+    user.js
+  ];
+  test('test', async ({ page }) => {
+    // Go to https://netology.ru/?modal=sign_in
+    await page.goto('https://netology.ru/?modal=sign_in');
+    // Click [placeholder="Email"]
+    await page.click('[placeholder="Email"]');
+    // Click [placeholder="Email"]
+    await page.click('[placeholder="Email"]');
+    // Fill [placeholder="Email"]
+    await page.fill('[placeholder="Email"]', email_1);
+    // Click [placeholder="Пароль"]
+    await page.click('[placeholder="Пароль"]');
+    // Click [placeholder="Email"]
+    await page.click('[placeholder="Email"]');
+    // Click [placeholder="Пароль"]
+    await page.click('[placeholder="Пароль"]');
+    // Click [placeholder="Пароль"]
+    await page.click('[placeholder="Пароль"]');
+    // Fill [placeholder="Пароль"]
+    await page.fill('[placeholder="Пароль"]', password_1);
+    // Click [data-testid="login-submit-btn"]
+    await Promise.all([
+      page.waitForNavigation(/*{ url: 'https://netology.ru/profile' }*/),
+      page.click('[data-testid="login-submit-btn"]')
+    ]);
+    // Click text=АЩ
+    await page.click('text=АЩ');
 });
+
