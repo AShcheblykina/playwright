@@ -29,11 +29,11 @@ test('NotSuccesAuth', async ({ page }) => {
   await page.getByPlaceholder('Пароль').click();
   await page.getByPlaceholder('Пароль').fill(password_1);
   await page.getByTestId('login-submit-btn').click();
-  await page.getByTestId('login-error-hint').click({
-    button: 'right'
+
+  await expect(page.getByText('Вы ввели неправильно логин или пароль')).toBeVisible();
   });
   
-});
+
 
 
 
