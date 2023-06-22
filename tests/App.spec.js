@@ -19,6 +19,8 @@ test('SuccesAuth', async ({ page }) => {
   await page.screenshot({ path:'./screenshots/screenshot7.png' });
   await page.getByText('АЩ').click();
   await page.screenshot({ path:'./screenshots/screenshot8.png' });
+
+  await expect(page.getByRole('heading', { name: 'Мои курсы и профессии' })).toBeVisible();
   
 });
 test('NotSuccesAuth', async ({ page }) => {
